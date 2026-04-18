@@ -1,16 +1,19 @@
 import streamlit as st
+import datetime
 
-st.title("This is my first Streamlit app")
-st.header("Welcome to Streamlit!")
-st.write("This is a basic Streamlit app.")
+st.set_page_config(page_title="Happy Birthday App", page_icon="🎂")
 
-name=st.text_input("Enter your name:")
-if name:
-    st.success(f"Hello, {name}! \nHow are you?")
-    
-number= st.slider("Pick a age",0,100)
-st.write(f"Your age is {number}")
-if st.button("Click me!"):
-    st.write("Most Welcome!")
-if st.checkbox("Show more info"):
-    st.write("Assalamu alaikum Guys very Most Welcome to my 1st App development.")
+st.title("🎉 Happy Birthday App 🎉")
+
+name = st.text_input("Enter the Birthday Person Name")
+
+if st.button("Celebrate 🎊"):
+    if name:
+        st.success(f"🎂 Happy Birthday {name}! 🎉")
+        st.balloons()
+        st.write("May Allah bless you with happiness, success, and long life 🤲")
+    else:
+        st.warning("Please enter a name first!")
+
+today = datetime.date.today()
+st.write("Today's Date:", today)
