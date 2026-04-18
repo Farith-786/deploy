@@ -67,11 +67,3 @@ if wish:
 
         # Upload birthday song in same folder (birthday.mp3)
         autoplay_audio("birthday.mp3")
-
-    else:
-        st.warning("Please enter a name")
-
-# Footer
-today = date.today()
-st.markdown(f"<div class='footer'>Made with ❤️ using Streamlit | {today}</div>", unsafe_allow_html=True)
-🎵 Step 2: Ad
