@@ -11,4 +11,6 @@ if name:
 number= st.slider("Pick a age",0,100)
 st.write(f"Your age is {number}")
 if st.button("Click me!"):
-    st.write("Please Share your Feedback!")
+    st.write("Button clicked!")
+if st.checkbox("Show more info"):
+    st.write("Assalamu alaikum Guys very Most Welcome to my 1st App development.")
