@@ -14,7 +14,3 @@ if st.button("Celebrate 🎉"):
         st.markdown(f"<h2 style='color: gold;'>Happy Birthday {name}! 🎊</h2>", unsafe_allow_html=True)
         st.balloons()
         st.snow()
-
-with col2:
-    stop = st.button("🛑 Stop")
-
