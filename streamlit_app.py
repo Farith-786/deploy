@@ -1,19 +1,16 @@
 import streamlit as st
-import datetime
 
-st.set_page_config(page_title="Happy Birthday App", page_icon="🎂")
+st.markdown(
+    """
+    <h1 style='text-align: center; color: pink;'>🎂 Happy Birthday 🎂</h1>
+    """,
+    unsafe_allow_html=True
+)
 
-st.title("🎉 Happy Birthday App 🎉")
+name = st.text_input("Enter Name")
 
-name = st.text_input("Enter the Birthday Person Name")
-
-if st.button("Celebrate 🎊"):
+if st.button("Celebrate 🎉"):
     if name:
-        st.success(f"🎂 Happy Birthday {name}! 🎉")
+        st.markdown(f"<h2 style='color: gold;'>Happy Birthday {name}! 🎊</h2>", unsafe_allow_html=True)
         st.balloons()
-        st.write("May Allah bless you with happiness, success, and long life 🤲")
-    else:
-        st.warning("Please enter a name first!")
-
-today = datetime.date.today()
-st.write("Today's Date:", today)
+        st.snow()
