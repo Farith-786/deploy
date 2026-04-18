@@ -10,7 +10,7 @@ st.markdown(
 name = st.text_input("Enter Name")
 
 if st.button("Click me!"):
-    st.write("Button clicked!")
+    st.write("PLease Click Info You Have Some Peacefull Points i Added!")
 if st.checkbox("Show more info"):
     st.write("Assalamu alaikum Guys very Most Welcome to my 1st App development.")
 
