@@ -1,9 +1,5 @@
 import streamlit as st
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-
-
 st.title("My First develop App")
 demo = st.text_input("Enter your name")
 
