@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-from PIL import Image
-import plotly.express as px
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
