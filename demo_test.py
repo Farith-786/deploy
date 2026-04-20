@@ -1,5 +1,8 @@
 import streamlit as st
 import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
 
 st.title("My First develop App")
 demo = st.text_input("Enter your name")
@@ -18,6 +21,15 @@ if dataset is not None:
 
 if dataset is not None:
          data = pd.read_csv(dataset)
+         
+         x = data.iloc[:, 0]
+         y = data.iloc[:, 1]
+         x_train,y_train,x_test,y_test = train_test_split(x,y,test_size=0.8,random_state=42)
+         
+         model = LinearRegression()
+         model.fit(x_train,y_train)
+   
+        
 
 else:
     st.warning("Please upload your dataset for model training.")
