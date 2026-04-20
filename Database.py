@@ -1,100 +1,43 @@
-# PAGE CONFIG
-# ------------------------------
-st.set_page_config(
-    page_title="Sales Dashboard",
-    page_icon="📊",
-    layout="wide"
-)
-
-st.title("📊 Sales Analytics Dashboard")
-
-# ------------------------------
-# CREATE SAMPLE DATA
-# ------------------------------
-np.random.seed(42)
-
+from matplotlib import pyplot as plt
+def plot_image(image, title=None):
+    plt.imshow(image)
+    if title is not None:
+        plt.title(title)
+    plt.axis('off')
+def plot_images(images, titles=None, cols=5):
+    rows = (len(images) + cols - 1) // cols
+    plt.figure(figsize=(15, 3 * rows))
+    for i, image in enumerate(images):
+        plt.subplot(rows, cols, i + 1)
+        plot_image(image, title=titles[i] if titles else None)
+    plt.tight_layout()
+    plt.show()
+plt.plot([1,2,3,4,5],[21,34,45,65,76])
+plt.title('Sample Line Plot')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.show()
+import numpy as np
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+plt.plot(x, y)
+plt.title('Sine Wave')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.show()
+import seaborn as sns
+import pandas as pd
 data = pd.DataFrame({
-    "Date": pd.date_range(start="2024-01-01", periods=120),
-    "Region": np.random.choice(["North", "South", "East", "West"], 120),
-    "Category": np.random.choice(["Electronics", "Clothing", "Food"], 120),
-    "Sales": np.random.randint(1000, 5000, 120),
-    "Profit": np.random.randint(200, 1500, 120)
+    'Category': ['A', 'B', 'C', 'D'],
+    'Values': [10, 20, 15, 25]
 })
-
-# ------------------------------
-# SIDEBAR FILTERS
-# ------------------------------
-st.sidebar.header("🔎 Filters")
-
-region_filter = st.sidebar.multiselect(
-    "Select Region",
-    options=data["Region"].unique(),
-    default=data["Region"].unique()
-)
-
-category_filter = st.sidebar.multiselect(
-    "Select Category",
-    options=data["Category"].unique(),
-    default=data["Category"].unique()
-)
-
-filtered_data = data[
-    (data["Region"].isin(region_filter)) &
-    (data["Category"].isin(category_filter))
-]
-
-# ------------------------------
-# KPI METRICS
-# ------------------------------
-total_sales = filtered_data["Sales"].sum()
-total_profit = filtered_data["Profit"].sum()
-avg_sales = filtered_data["Sales"].mean()
-
-col1, col2, col3 = st.columns(3)
-
-col1.metric("💰 Total Sales", f"${total_sales:,.0f}")
-col2.metric("📈 Total Profit", f"${total_profit:,.0f}")
-col3.metric("📊 Avg Sales", f"${avg_sales:,.0f}")
-
-st.divider()
-
-# ------------------------------
-# SALES OVER TIME (LINE CHART)
-# ------------------------------
-st.subheader("📅 Sales Over Time")
-
-sales_by_date = filtered_data.groupby("Date")["Sales"].sum()
-
-fig1, ax1 = plt.subplots()
-ax1.plot(sales_by_date.index, sales_by_date.values)
-ax1.set_xlabel("Date")
-ax1.set_ylabel("Sales")
-st.pyplot(fig1)
-
-# ------------------------------
-# SALES BY REGION (BAR CHART)
-# ------------------------------
-st.subheader("🌍 Sales by Region")
-
-sales_region = filtered_data.groupby("Region")["Sales"].sum()
-
-fig2, ax2 = plt.subplots()
-ax2.bar(sales_region.index, sales_region.values)
-st.pyplot(fig2)
-
-# ------------------------------
-# SALES BY CATEGORY (PIE CHART)
-# ------------------------------
-st.subheader("🥧 Sales by Category")
-
-sales_cat = filtered_data.groupby("Category")["Sales"].sum()
-
-fig3, ax3 = plt.subplots()
-ax3.pie(sales_cat.values, labels=sales_cat.index, autopct="%1.1f%%")
-st.pyplot(fig3)
-
-# ------------------------------
-# DATA TABLE
-# ------------------------------
-st.subheader("📋 Filtered Data")
-st.dataframe(filtered_data)
+sns.barplot(x='Category', y='Values', data=data)
+plt.title('Bar Plot')
+plt.xlabel('Category')
+plt.ylabel('Values')
+plt.show()
+import plotly.express as px
+df = px.data.iris()
+fig = px.scatter(df, x='sepal_width', y='sepal_length', color='species')
+fig.update_layout(title='Iris Dataset Scatter Plot', xaxis_title='Sepal Width', yaxis_title='Sepal Length')
+fig.show()
