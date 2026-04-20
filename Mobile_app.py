@@ -31,5 +31,15 @@ st.header('Sales Distribution')
 fig3, ax3 = plt.subplots()
 ax3.pie([19,30,8,15,6],labels=['Iphone','Samsung','Oppo','Vivo','Nokia'],autopct='%1.1f%%')
 ax3.set_title('Mobile Sales Analysis')
-# Display in Streamlit
-st.pyplot(fig3)
+import streamlit as st
+
+st.title('Mobile Sales Analysis Dashboard')
+# --- Plot 1: Line Chart ---
+st.header('Days vs Sales')
+st.write('This line chart shows the sales trend over 5 days.')
+name=st.text_input('Enter your name')
+if name:
+    st.write(f'Hello, {name}! Welcome to the Mobile Sales Analysis Dashboard.') 
+number= st.slider('Select a number to see its square', 0, 100,)
+st.write(f'The square of {number} is {number**2}.')
+st.write("Thank you for visiting my app!")
