@@ -30,8 +30,6 @@ x_train,y_train,x_test,y_test = train_test_split(x,y,test_size=0.8,random_state=
          
 model = LinearRegression()
 model.fit(x_train,y_train)
-   
-        
 
 else:
     st.warning("Please upload your dataset for model training.")
