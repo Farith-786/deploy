@@ -14,4 +14,10 @@ if dataset is not None:
 
 if st.checkbox("Show Summary"):
     st.write(df.describe())
-    
+
+if st.checkbox("Show Plot"):
+    fig = px.scatter(df, x=df.columns[0], y=df.columns[1])
+    st.plotly_chart(fig)
+
+if dataset is not None:
+    data = pd.read_csv(dataset)
