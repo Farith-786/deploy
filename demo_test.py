@@ -14,22 +14,22 @@ if dataset is not None:
     df = pd.read_csv(dataset)
     st.dataframe(df)
 
-    if st.checkbox("Show Summary"):
-        st.write(df.describe())
+if st.checkbox("Show Summary"):
+    st.write(df.describe())
 
-    if st.checkbox("Show Plot"):
-        fig = px.scatter(df, x=df.columns[0], y=df.columns[1])
-        st.plotly_chart(fig)
+if st.checkbox("Show Plot"):
+    fig = px.scatter(df, x=df.columns[0], y=df.columns[1])
+    st.plotly_chart(fig)
 
 if dataset is not None:
-         data = pd.read_csv(dataset)
+    data = pd.read_csv(dataset)
          
-         x = data.iloc[:, 0]
-         y = data.iloc[:, 1]
-         x_train,y_train,x_test,y_test = train_test_split(x,y,test_size=0.8,random_state=42)
+x = data.iloc[:, 0]
+y = data.iloc[:, 1]
+x_train,y_train,x_test,y_test = train_test_split(x,y,test_size=0.8,random_state=42)
          
-         model = LinearRegression()
-         model.fit(x_train,y_train)
+model = LinearRegression()
+model.fit(x_train,y_train)
    
         
 
