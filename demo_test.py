@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
+import plotly.express as px
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
@@ -15,9 +17,9 @@ if dataset is not None:
     if st.checkbox("Show Summary"):
         st.write(df.describe())
 
-     if st.checkbox("Show Plot"):
-         fig = px.scatter(df, x=df.columns[0], y=df.columns[1])
-         st.plotly_chart(fig)
+    if st.checkbox("Show Plot"):
+        fig = px.scatter(df, x=df.columns[0], y=df.columns[1])
+        st.plotly_chart(fig)
 
 if dataset is not None:
          data = pd.read_csv(dataset)
