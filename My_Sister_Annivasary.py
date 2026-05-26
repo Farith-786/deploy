@@ -57,7 +57,7 @@ st.markdown(
 
 # Image
 st.image(
-    "https://WhatsApp Image 2026-05-26 at 5.17.11 PM.jpeg",
+    "https://your-image-link.com/sister.jpg",
     use_container_width=True
 )
 
