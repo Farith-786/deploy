@@ -56,10 +56,13 @@ st.markdown(
 )
 
 # Image
-st.image(
-    "https://your-image-link.com/sister.jpg",
-    use_container_width=True
+uploaded_file = st.file_uploader(
+    "Upload Sister's Picture",
+    type=["jpg", "jpeg", "png"]
 )
+
+if uploaded_file:
+    st.image(uploaded_file, use_container_width=True)
 
 st.markdown("---")
 
