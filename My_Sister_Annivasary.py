@@ -1,7 +1,7 @@
 import streamlit as st
 from datetime import datetime
 # Set the title of the app
-st.title("My Sister's Anniversary Countdown App")
+st.title("My Sister's Anniversary Alshifa & Yousuf")
 # Get the current date
 import streamlit as st
 from datetime import datetime
@@ -51,13 +51,13 @@ st.balloons()
 
 # Title
 st.markdown(
-    '<p class="title">💖 Happy Wedding Anniversary Dear Sister 💖</p>',
+    '<p class="title">💖 Happy Wedding Anniversary Dear Sister Alshifa & Yousuf 💖</p>',
     unsafe_allow_html=True
 )
 
 # Image
 st.image(
-    "https://images.unsplash.com/photo-1511285560929-80b456fea0bc",
+    "https://WhatsApp Image 2026-05-26 at 5.17.11 PM.jpeg",
     use_container_width=True
 )
 
