@@ -905,19 +905,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Function to connect to MySQL database
+# Function to connect to SQLite database
 def get_data(query, params=None):
-    conn = mysql.connector.connect(
-        host="localhost",
-        user="your_username",
-        password="fari",
-        database="crypto_db"
-    )
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute(query, params)
-    result = cursor.fetchall()
+    conn = sqlite3.connect("weather_database.sqlite")
+    if params:
+        df = pd.read_sql_query(query, conn, params=params)
+    else:
+        df = pd.read_sql_query(query, conn)
     conn.close()
-    return result
+    return df
+
 
 # Streamlit App Title
 st.set_page_config(page_title="Crypto Data Analysis", layout="wide")
@@ -978,4 +975,7 @@ elif page == "Creator Info":
     **Name:** Farith Ahamed
     **designation:** Software Engineer  
     **Email:** Farith.Tech.Software Engineer.com
+    """)
+
+
     """)
