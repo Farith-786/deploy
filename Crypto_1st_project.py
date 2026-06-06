@@ -1,21 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Function to connect to MySQL database
-def get_data(query, params=None):
-    conn = mysql.connector.connect(
-        host="localhost",
-        user="your_username",
-        password="fari",
-        database="crypto_db"
-    )
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute(query, params)
-    result = cursor.fetchall()
-    conn.close()
-    return result
 
 # Streamlit App Title
 st.set_page_config(page_title="Crypto Data Analysis", layout="wide")
