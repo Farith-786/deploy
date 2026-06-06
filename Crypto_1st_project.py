@@ -92,27 +92,7 @@ start_date = pd.to_datetime('2020-01-01')
 end_date   = pd.to_datetime('2026-04-29')
 
 oil_df = oil_df[(oil_df['Date'] >= start_date) & (oil_df['Date'] <= end_date)]
-
 oil_df
-
-import yfinance as yf
-import pandas as pd
-tickers=["^GSPC", "^IXIC", "^NSEI"]
-start_date="2020-01-01"
-end_date="2026-01-29"
-
-stocks_df=yf.download(tickers,start=start_date,end=end_date,group_by='tickers')
-stocks_df.head()
-
-stocks1_df=stocks_df["^GSPC"].reset_index()
-stocks1_df['Date'] = pd.to_datetime(stocks1_df['Date'])
-stocks1_df = stocks1_df[(stocks1_df['Date'] >= start_date) & (stocks1_df['Date'] <= end_date)]
-stocks1_df
-
-cols = coinsPrice_df.columns.tolist()
-cols.insert (1, cols.pop(2))
-coinsPrice_df = coinsPrice_df[cols]
-coinsPrice_df
 
 Allstocks_df=pd.concat([stocks1_df,stocks2_df,stocks3_df]) # pyright: ignore[reportUndefinedVariable]
 Allstocks_df
