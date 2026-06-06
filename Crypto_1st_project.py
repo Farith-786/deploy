@@ -976,6 +976,3 @@ elif page == "Creator Info":
     **designation:** Software Engineer  
     **Email:** Farith.Tech.Software Engineer.com
     """)
-
-
-    """)
