@@ -917,7 +917,7 @@ def get_data(query, params=None):
 
 
 # Streamlit App Title
-st.set_page_config(page_title="Crypto Data Analysis", layout="wide")
+st.set_page_config(page_title="Crypto Data Analysis", layout="Narrow")
 
 
 # Sidebar for navigation
