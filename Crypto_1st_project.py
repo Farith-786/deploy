@@ -33,7 +33,6 @@ if st.button("Run Query"):
         st.dataframe(df)
         
 st.write("Use the sidebar to navigate through datasets and analysis sections. You can also run custom SQL queries in the 'SQL Queries' section.")
-st.dataframe(get_data("SELECT * FROM cryptocurrencies LIMIT 5")) # Example query to show some data on the home page
 
 
 #backfround image and color for streamlit app     
