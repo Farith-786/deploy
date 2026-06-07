@@ -1,16 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-#function to connect to pymysql database
-def get_connection():
-    return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="fari",
-        database="crypto_db"
-    )
-
-
 #function to execute SQL query and return results as a DataFrame
 def get_data(query):
     conn = get_connection()
@@ -23,7 +13,6 @@ st.title("Crypto, Oil, and Stock Data Analysis")
 
 #streamlit sidebar for navigation
 page = st.sidebar.selectbox("🚀 Select a page", ["Home", "Data Overview", "SQL Queries", "Creator Info"])
-
 # Display selected page content
 st.write(f"You selected: {page}")
 select_coin = st.sidebar.selectbox("Select a cryptocurrency", ["bitcoin", "ethereum", "solana"])
