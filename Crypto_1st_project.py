@@ -27,8 +27,7 @@ if select_overview:
     st.write("Use the sidebar to navigate through datasets and analysis sections. You can also run custom SQL queries in the 'SQL Queries' section.")
     
 if st.button("Run Query"):
-    with st.spinner("Running query..."):
-        df = get_data("SELECT * FROM cryptocurrencies LIMIT 5") # Execute a specific SQL query and return a DataFrame
+    with st.spinner("Running query...")
         st.success("Query executed successfully!")
         st.dataframe(df)
         
