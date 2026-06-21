@@ -1,146 +1,170 @@
-import streamlit as st
-from datetime import datetime
-# Set the title of the app
-st.title("My Sister's Anniversary Alshifa & Yousuf")
-# Get the current date
-import streamlit as st
-from datetime import datetime
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love & Wife❤️</title>
 
-# Page Configuration
-st.set_page_config(
-    page_title="Happy Anniversary Sister ❤️",
-    page_icon="💖",
-    layout="wide"
-)
-
-# Custom CSS
-st.markdown("""
 <style>
-.main {
-    background: linear-gradient(to right, #ffdde1, #ee9ca7);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
 }
-.title {
-    text-align: center;
-    font-size: 55px;
-    color: #d63384;
-    font-weight: bold;
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
-.message {
-    text-align: center;
-    font-size: 24px;
-    color: #333333;
-    line-height: 1.8;
+
+.container{
+    z-index:10;
+    color:white;
 }
-.quote {
-    background-color: rgba(255,255,255,0.7);
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    font-size: 22px;
+
+h1{
+    font-size:4rem;
+    animation: glow 2s infinite alternate;
 }
-.footer {
-    text-align: center;
-    color: #555;
-    font-size: 18px;
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #fff,
+                    0 0 20px #fff,
+                    0 0 30px #ff4da6;
+    }
+    to{
+        text-shadow:0 0 20px #fff,
+                    0 0 40px #ff4da6,
+                    0 0 60px #ff4da6;
+    }
+}
+
+.message{
+    margin-top:20px;
+    font-size:1.5rem;
+    max-width:700px;
+}
+
+.photo{
+    margin-top:25px;
+}
+
+.photo img{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    box-shadow:0 0 30px white;
+}
+
+.love{
+    font-size:2rem;
+    margin-top:20px;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+
+.balloon{
+    position:absolute;
+    bottom:-150px;
+    width:60px;
+    height:80px;
+    border-radius:50%;
+    animation: float 10s linear infinite;
+}
+
+.balloon::before{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:100px;
+    background:white;
+    left:50%;
+    top:80px;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    font-size:25px;
+    animation: hearts 8s linear infinite;
+}
+
+@keyframes hearts{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100vh);
+        opacity:0;
+    }
 }
 </style>
-""", unsafe_allow_html=True)
+</head>
 
-# Balloons
-st.balloons()
+<body>
 
-# Title
-st.markdown(
-    '<p class="title">💖 Happy Wedding Anniversary Dear Sister Alshifa & Yousuf 💖</p>',
-    unsafe_allow_html=True
-)
+<div class="container">
+    <h1>🎂 Happy Birthday My Love ❤️</h1>
 
-# Image
-uploaded_file = st.file_uploader(
-    "Upload Sister's Picture",
-    type=["jpg", "jpeg", "png"]
-)
+    <div class="photo">
+        <!-- Replace wife.jpg with your wife's image -->
+        <img src="wife.jpg" alt="My Love">
+    </div>
 
-if uploaded_file:
-    st.image(uploaded_file, use_container_width=True)
+    <p class="message">
+        Happy Birthday to the most beautiful woman in my life. ❤️<br><br>
 
-st.markdown("---")
+        Ne enoda life vandhadhuku apram dhan enoda life avalo azhaga Change aatchu Thanks di my dr
+        May your birthday be filled with joy, laughter, and all the love you deserve.
 
-# Main Message
-st.markdown("""
-<div class="message">
+        I Love You Forever ❤️
+    </p>
 
-🌹 Dear Sister 🌹
-
-On this beautiful day, I wish you a very Happy Wedding Anniversary.
-
-May your love continue to grow stronger with every passing year.
-May Allah bless your marriage with endless happiness, peace,
-prosperity, and countless beautiful memories.
-
-Your journey together is an inspiration to everyone around you.
-May your hearts always remain connected with love, trust, and understanding.
-
-💐 Wishing you many more years of togetherness and joy. 💐
-
-❤️ Happy Anniversary! ❤️
-
+    <div class="love">💖 Forever Yours 💖</div>
 </div>
-""", unsafe_allow_html=True)
 
-st.markdown("---")
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="birthday.mp3" type="audio/mp3">
+</audio>
 
-# Quotes Section
-st.markdown("""
-<div class="quote">
+<!-- Balloons -->
+<div class="balloon" style="left:10%; background:red; animation-duration:8s;"></div>
+<div class="balloon" style="left:25%; background:yellow; animation-duration:10s;"></div>
+<div class="balloon" style="left:40%; background:blue; animation-duration:12s;"></div>
+<div class="balloon" style="left:60%; background:green; animation-duration:9s;"></div>
+<div class="balloon" style="left:80%; background:purple; animation-duration:11s;"></div>
 
-✨ "A successful marriage requires falling in love many times,
-always with the same person." ✨
+<!-- Hearts -->
+<div class="heart" style="left:15%;">❤️</div>
+<div class="heart" style="left:30%; animation-delay:2s;">💖</div>
+<div class="heart" style="left:50%; animation-delay:4s;">❤️</div>
+<div class="heart" style="left:70%; animation-delay:1s;">💕</div>
+<div class="heart" style="left:85%; animation-delay:3s;">💗</div>
 
-<br><br>
-
-💞 "May your love story continue forever and become more beautiful each year." 💞
-
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("---")
-
-# Anniversary Counter
-current_year = datetime.now().year
-
-years = st.number_input(
-    "How many years of marriage?",
-    min_value=1,
-    max_value=100,
-    value=5
-)
-
-st.success(f"🎉 Celebrating {years} Wonderful Years Together! 🎉")
-
-# Special Wishes Button
-if st.button("💌 Open Special Anniversary Wish"):
-    st.snow()
-
-    st.markdown("""
-    ## 💖 Special Message 💖
-
-    Dear Sister,
-
-    Thank you for being such a wonderful sister and role model.
-
-    May Allah bless your family with happiness,
-    good health, success, and endless love.
-
-    🌹 Happy Anniversary to you! 🌹
-
-    With Love,
-    Your Brother ❤️
-    """)
-
-st.markdown("<br><br>", unsafe_allow_html=True)
-
-st.markdown(
-    '<div class="footer">Made with ❤️ for My Beloved Sister</div>',
-    unsafe_allow_html=True
-)
+</body>
+</html>
