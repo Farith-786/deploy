@@ -1,170 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday My Love & Wife❤️</title>
+import streamlit as st
+import base64
 
+st.set_page_config(
+    page_title="Happy Birthday My Love ❤️",
+    page_icon="🎂",
+    layout="wide"
+)
+
+# ---------- Background CSS ----------
+page_bg = """
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Poppins', sans-serif;
+[data-testid="stAppViewContainer"]{
+background: linear-gradient(-45deg,
+#ff9a9e,
+#fad0c4,
+#fbc2eb,
+#a18cd1);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite;
 }
 
-body{
-    height:100vh;
-    overflow:hidden;
-    background:linear-gradient(135deg,#ff758c,#ff7eb3);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-
-.container{
-    z-index:10;
-    color:white;
+@keyframes gradient {
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 h1{
-    font-size:4rem;
-    animation: glow 2s infinite alternate;
+text-align:center;
+font-size:70px !important;
+color:white;
+text-shadow:3px 3px 10px black;
 }
 
-@keyframes glow{
-    from{
-        text-shadow:0 0 10px #fff,
-                    0 0 20px #fff,
-                    0 0 30px #ff4da6;
-    }
-    to{
-        text-shadow:0 0 20px #fff,
-                    0 0 40px #ff4da6,
-                    0 0 60px #ff4da6;
-    }
-}
-
-.message{
-    margin-top:20px;
-    font-size:1.5rem;
-    max-width:700px;
-}
-
-.photo{
-    margin-top:25px;
-}
-
-.photo img{
-    width:250px;
-    height:250px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid white;
-    box-shadow:0 0 30px white;
-}
-
-.love{
-    font-size:2rem;
-    margin-top:20px;
-    animation: heartbeat 1s infinite;
-}
-
-@keyframes heartbeat{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.2);}
-    100%{transform:scale(1);}
-}
-
-.balloon{
-    position:absolute;
-    bottom:-150px;
-    width:60px;
-    height:80px;
-    border-radius:50%;
-    animation: float 10s linear infinite;
-}
-
-.balloon::before{
-    content:"";
-    position:absolute;
-    width:2px;
-    height:100px;
-    background:white;
-    left:50%;
-    top:80px;
-}
-
-@keyframes float{
-    from{
-        transform:translateY(0);
-    }
-    to{
-        transform:translateY(-120vh);
-    }
+.big-text{
+font-size:35px;
+font-weight:bold;
+text-align:center;
+color:white;
+text-shadow:2px 2px 8px black;
 }
 
 .heart{
-    position:absolute;
-    color:white;
-    font-size:25px;
-    animation: hearts 8s linear infinite;
+font-size:60px;
+animation: pulse 1.5s infinite;
+text-align:center;
 }
 
-@keyframes hearts{
-    from{
-        transform:translateY(100vh);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-100vh);
-        opacity:0;
-    }
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
 }
 </style>
-</head>
+"""
 
-<body>
+st.markdown(page_bg, unsafe_allow_html=True)
 
-<div class="container">
-    <h1>🎂 Happy Birthday My Love ❤️</h1>
+# ---------- Music ----------
+st.audio("birthday_song.mp3", autoplay=True)
 
-    <div class="photo">
-        <!-- Replace wife.jpg with your wife's image -->
-        <img src="wife.jpg" alt="My Love">
-    </div>
+# ---------- Title ----------
+st.markdown("<h1>🎂 Happy Birthday My Love ❤️</h1>", unsafe_allow_html=True)
 
-    <p class="message">
-        Happy Birthday to the most beautiful woman in my life. ❤️<br><br>
+# ---------- Wife Image ----------
+st.image(
+    "wife.jpg",
+    caption="My Beautiful Wife ❤️",
+    use_container_width=True
+)
 
-        Ne enoda life vandhadhuku apram dhan enoda life avalo azhaga Change aatchu Thanks di my dr
-        May your birthday be filled with joy, laughter, and all the love you deserve.
+# ---------- Message ----------
+st.markdown(
+"""
+<div class='big-text'>
+🌹 My Dearest Wife 🌹<br><br>
 
-        I Love You Forever ❤️
-    </p>
+Happy Birthday to the most beautiful woman in my life. ❤️<br><br>
 
-    <div class="love">💖 Forever Yours 💖</div>
+Every day with you is a blessing and every moment spent with you is a precious memory. 💕<br><br>
+
+You are my happiness, my strength, my best friend, and the love of my life. ❤️<br><br>
+
+May your birthday be filled with endless joy, laughter, love, and all the happiness you deserve. 🎁🎂🎉<br><br>
+
+I promise to love you today, tomorrow, and forever. 💖<br><br>
+
+Happy Birthday, My Queen 👑❤️
+
 </div>
+""",
+unsafe_allow_html=True
+)
 
-<!-- Background Music -->
-<audio autoplay loop>
-    <source src="birthday.mp3" type="audio/mp3">
-</audio>
+# ---------- Balloons ----------
+st.balloons()
 
-<!-- Balloons -->
-<div class="balloon" style="left:10%; background:red; animation-duration:8s;"></div>
-<div class="balloon" style="left:25%; background:yellow; animation-duration:10s;"></div>
-<div class="balloon" style="left:40%; background:blue; animation-duration:12s;"></div>
-<div class="balloon" style="left:60%; background:green; animation-duration:9s;"></div>
-<div class="balloon" style="left:80%; background:purple; animation-duration:11s;"></div>
+# ---------- Hearts ----------
+st.markdown(
+"""
+<div class='heart'>
+❤️ ❤️ ❤️ ❤️ ❤️
+</div>
+""",
+unsafe_allow_html=True
+)
 
-<!-- Hearts -->
-<div class="heart" style="left:15%;">❤️</div>
-<div class="heart" style="left:30%; animation-delay:2s;">💖</div>
-<div class="heart" style="left:50%; animation-delay:4s;">❤️</div>
-<div class="heart" style="left:70%; animation-delay:1s;">💕</div>
-<div class="heart" style="left:85%; animation-delay:3s;">💗</div>
-
-</body>
-</html>
+st.success("🎉 I Love You Forever ❤️ Happy Birthday My Darling 🎉")
