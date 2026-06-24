@@ -82,12 +82,3 @@ May your birthday be filled with endless joy, laughter, love, and all the happin
 I promise to love you today, tomorrow, and forever. 💖<br><br>
 
 st.markdown("<h1>🎂 Happy Birthday My Love ❤️</h1>", unsafe_allow_html=True)
-
-elif page == "Creator Info":
-    st.title("Creator Information")
-    st.markdown("""
-    **Name:** Farith Ahamed
-    **designation:** Software Engineer  
-    **Email:** Farith.Tech.Software Engineer.com
-
-    """)
