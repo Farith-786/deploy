@@ -110,3 +110,7 @@ if st.button("Celebrate 🎉"):
         st.snow()
     else:
         st.warning("Please enter your name to celebrate!")
+
+#Slidebar Option#
+
+page = st.sidebar.selectbox("🚀 Select a page", ["Home", "Creator Info"])
