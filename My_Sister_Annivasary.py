@@ -1,6 +1,7 @@
 import streamlit as st
 import base64
 
+
 st.set_page_config(
     page_title="Happy Birthday My Love ❤️",
     page_icon="🎂",
@@ -57,19 +58,15 @@ text-align:center;
 
 st.markdown(page_bg, unsafe_allow_html=True)
 
-# ---------- Music ----------
-st.audio("birthday_song.mp3", autoplay=True)
-
 # ---------- Title ----------
 st.markdown("<h1>🎂 Happy Birthday My Love ❤️</h1>", unsafe_allow_html=True)
 
 # ---------- Wife Image ----------
 st.image(
-    "wife.jpg",
+    "MY_WIFE_jpeg.jpeg",
     caption="My Beautiful Wife ❤️",
     use_container_width=True
 )
-
 # ---------- Message ----------
 st.markdown(
 """
