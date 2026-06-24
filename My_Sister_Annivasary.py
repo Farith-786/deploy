@@ -87,3 +87,20 @@ Happy Birthday, My Queen 👑❤️
 """,
 unsafe_allow_html=True
 )
+
+# ---------- Balloons ----------
+st.balloons()
+
+# ---------- Hearts ----------
+st.markdown(
+"""
+<div class='heart'>
+❤️ ❤️ ❤️ ❤️ ❤️
+</div>
+""",
+unsafe_allow_html=True
+)
+
+st.success("🎉 I Love You Forever ❤️ Happy Birthday My Darling 🎉")
+
+
