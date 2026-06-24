@@ -55,7 +55,10 @@ text-align:center;
 }
 </style>
 """
-
+st.title("How was your birthday as been going?")
+st.selectbox("Choose a answer", ["most Enjoying", "Very Bore", "50% ok", "Not so good", "Worst"])
+st.chat_message("PLEASE ENJOY YOUR BIRTHDAY AND MAKE IT MEMORABLE")
+name = st.text_input("AAFIYA BEGUM & FARITH AHAMED")
 st.markdown(page_bg, unsafe_allow_html=True)
 
 # ---------- Title ----------
