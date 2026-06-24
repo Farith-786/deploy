@@ -115,7 +115,6 @@ if st.button("Celebrate 🎉"):
 
 page = st.sidebar.selectbox("🚀 Select a page", ["Home", "Creator Info"])
 
-elif page == "Creator Info":
     st.title("👨‍💻 Creator Information")
 
     st.write("**Name:** Farith Ahamed")
