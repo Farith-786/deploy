@@ -60,7 +60,7 @@ st.markdown(page_bg, unsafe_allow_html=True)
 
 # ---------- Title ----------
 st.markdown("<h1>🎂 Happy Birthday My Love ❤️</h1>", unsafe_allow_html=True)
-)
+
 # ---------- Message ----------
 st.markdown(
 """
