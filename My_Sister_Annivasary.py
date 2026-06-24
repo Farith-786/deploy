@@ -55,10 +55,6 @@ text-align:center;
 }
 </style>
 """
-st.title("How was your birthday as been going?")
-st.selectbox("Choose a answer", ["most Enjoying", "Very Bore", "50% ok", "Not so good", "Worst"])
-st.chat_message("PLEASE ENJOY YOUR BIRTHDAY AND MAKE IT MEMORABLE")
-name = st.text_input("AAFIYA BEGUM & FARITH AHAMED")
 st.markdown(page_bg, unsafe_allow_html=True)
 
 # ---------- Title ----------
@@ -86,7 +82,14 @@ st.selectbox("Choose a answer", ["most Enjoying", "Very Bore", "50% ok", "Not so
 st.chat_message("PLEASE ENJOY YOUR BIRTHDAY AND MAKE IT MEMORABLE")
 name = st.text_input("ENTER NAME")
 
-Happy Birthday, My Queen 👑❤️
+
+if st.button("Click me!"):
+    st.write("Button clicked!")
+if st.checkbox("Show more info"):
+    st.write("Hey Hi priya This is my app development in your birthday wish, intha Birthday unaku happy ha poganum at the same time unaku erukura kashtam ellamae Poidum Kooda aa eruken edhukum Payapidadha Pathukalam.")
+
+
+Happy Birthday, My Queen AAFIYA BEGUM & FARITH AHAMED 👑❤️
 
 </div>
 """,
