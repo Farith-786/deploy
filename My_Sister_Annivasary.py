@@ -60,12 +60,6 @@ st.markdown(page_bg, unsafe_allow_html=True)
 
 # ---------- Title ----------
 st.markdown("<h1>🎂 Happy Birthday My Love ❤️</h1>", unsafe_allow_html=True)
-
-# ---------- Wife Image ----------
-st.image(
-    "MY_WIFE_jpeg.",
-    caption="My Beautiful Wife ❤️",
-    use_container_width=True
 )
 # ---------- Message ----------
 st.markdown(
