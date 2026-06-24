@@ -114,3 +114,11 @@ if st.button("Celebrate 🎉"):
 #Slidebar Option#
 
 page = st.sidebar.selectbox("🚀 Select a page", ["Home", "Creator Info"])
+
+elif page == "Creator Info":
+    st.title("Creator Information")
+    st.markdown("""
+    **Name:** Farith Ahamed
+    **designation:** Software Engineer  
+    **Email:** Farith.Tech.Software Engineer.com
+    """)
