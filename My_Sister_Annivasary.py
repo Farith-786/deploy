@@ -89,4 +89,5 @@ elif page == "Creator Info":
     **Name:** Farith Ahamed
     **designation:** Software Engineer  
     **Email:** Farith.Tech.Software Engineer.com
+
     """)
