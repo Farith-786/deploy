@@ -65,8 +65,7 @@ st.selectbox("Choose a answer", ["most Enjoying", "Very Bore", "50% ok", "Not so
 st.chat_message("PLEASE ENJOY YOUR BIRTHDAY AND MAKE IT MEMORABLE")
 name = st.text_input("Enter Name")
 
-# ---------- Message ----------
-# ---------- Message ----------
+# ---------- Message --------
 st.markdown(
 """
 <div class='big-text'>
@@ -86,3 +85,5 @@ Happy Birthday, My Queen 👑❤️
 
 </div>
 """,
+unsafe_allow_html=True
+)
