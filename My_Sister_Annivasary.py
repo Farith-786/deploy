@@ -80,6 +80,12 @@ May your birthday be filled with endless joy, laughter, love, and all the happin
 
 I promise to love you today, tomorrow, and forever. 💖<br><br>
 
+
+st.title("How was your birthday as been going?")
+st.selectbox("Choose a answer", ["most Enjoying", "Very Bore", "50% ok", "Not so good", "Worst"])
+st.chat_message("PLEASE ENJOY YOUR BIRTHDAY AND MAKE IT MEMORABLE")
+name = st.text_input("ENTER NAME")
+
 Happy Birthday, My Queen 👑❤️
 
 </div>
