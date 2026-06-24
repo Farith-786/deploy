@@ -66,6 +66,7 @@ st.chat_message("PLEASE ENJOY YOUR BIRTHDAY AND MAKE IT MEMORABLE")
 name = st.text_input("Enter Name")
 
 # ---------- Message ----------
+# ---------- Message ----------
 st.markdown(
 """
 <div class='big-text'>
@@ -81,4 +82,7 @@ May your birthday be filled with endless joy, laughter, love, and all the happin
 
 I promise to love you today, tomorrow, and forever. 💖<br><br>
 
-st.markdown("<h1>🎂 Happy Birthday My Love ❤️</h1>", unsafe_allow_html=True)
+Happy Birthday, My Queen 👑❤️
+
+</div>
+""",
