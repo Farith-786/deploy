@@ -63,7 +63,7 @@ st.markdown("<h1>🎂 Happy Birthday My Love ❤️</h1>", unsafe_allow_html=Tru
 
 # ---------- Wife Image ----------
 st.image(
-    "MY_WIFE_jpeg.jpeg",
+    "MY_WIFE_jpeg.",
     caption="My Beautiful Wife ❤️",
     use_container_width=True
 )
