@@ -1,7 +1,7 @@
 # WEATHER_PROJECT.py
 import streamlit as st
 import pandas as pd
-import mysql.connector import connect
+import mysql.connector
 import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime, date
