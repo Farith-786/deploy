@@ -2,7 +2,6 @@
 import streamlit as st
 import pandas as pd
 import mysql.connector
-from mysql.connector import Error
 import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime, date
