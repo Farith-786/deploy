@@ -51,6 +51,22 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Database connection functions
+@st.cache_resource
+def connect_to_mysql():
+    """Connect to MySQL database"""
+    try:
+        connection = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="fari",
+            database="weather_db"
+        )
+        return connection
+    except mysql.connector.Error as err:
+        st.error(f"Database Connection Error: {err}")
+        return None
+
 # Database setup - Using SQLite for cloud deployment
 @st.cache_resource
 def init_database():
