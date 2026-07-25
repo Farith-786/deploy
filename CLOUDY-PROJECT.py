@@ -1,7 +1,8 @@
 # WEATHER_PROJECT.py
 import streamlit as st
 import pandas as pd
-import mysql.connector import connect
+import mysql.connector
+from mysql.connector import Error
 import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime, date
@@ -9,6 +10,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import warnings
 import os
+import sqlite3
 warnings.filterwarnings('ignore')
 
 # Page configuration - MUST be the first Streamlit command
@@ -93,36 +95,36 @@ def init_database():
         
         # Insert sample data
         sample_data = [
-            ('New York', '2024-01-15', 22.5, 65.0, 15.2, 'Sunny'),
-            ('New York', '2024-01-16', 20.0, 70.0, 18.5, 'Cloudy'),
-            ('New York', '2024-01-17', 18.5, 75.0, 20.0, 'Rainy'),
-            ('New York', '2024-01-18', 21.0, 68.0, 16.0, 'Partly Cloudy'),
-            ('New York', '2024-01-19', 23.0, 62.0, 14.0, 'Sunny'),
-            ('New York', '2024-01-20', 19.5, 72.0, 19.0, 'Cloudy'),
-            ('London', '2024-01-15', 18.0, 75.0, 20.5, 'Cloudy'),
-            ('London', '2024-01-16', 16.5, 80.0, 22.0, 'Rainy'),
-            ('London', '2024-01-17', 19.0, 70.0, 18.0, 'Partly Cloudy'),
-            ('London', '2024-01-18', 17.0, 78.0, 21.0, 'Cloudy'),
-            ('London', '2024-01-19', 20.0, 68.0, 17.5, 'Sunny'),
-            ('London', '2024-01-20', 18.5, 72.0, 19.5, 'Partly Cloudy'),
-            ('Tokyo', '2024-01-15', 25.0, 60.0, 12.0, 'Clear'),
-            ('Tokyo', '2024-01-16', 23.5, 65.0, 14.0, 'Sunny'),
-            ('Tokyo', '2024-01-17', 24.0, 62.0, 11.5, 'Clear'),
-            ('Tokyo', '2024-01-18', 26.0, 58.0, 10.0, 'Sunny'),
-            ('Tokyo', '2024-01-19', 22.0, 68.0, 13.5, 'Cloudy'),
-            ('Tokyo', '2024-01-20', 24.5, 60.0, 12.5, 'Clear'),
-            ('Paris', '2024-01-15', 20.0, 70.0, 18.0, 'Partly Cloudy'),
-            ('Paris', '2024-01-16', 19.0, 72.0, 19.5, 'Cloudy'),
-            ('Paris', '2024-01-17', 21.0, 68.0, 17.0, 'Sunny'),
-            ('Paris', '2024-01-18', 18.0, 75.0, 20.0, 'Rainy'),
-            ('Paris', '2024-01-19', 22.0, 65.0, 16.5, 'Sunny'),
-            ('Paris', '2024-01-20', 20.5, 68.0, 18.5, 'Partly Cloudy'),
-            ('Sydney', '2024-01-15', 30.0, 55.0, 10.0, 'Sunny'),
-            ('Sydney', '2024-01-16', 28.5, 58.0, 12.0, 'Clear'),
-            ('Sydney', '2024-01-17', 29.0, 56.0, 11.0, 'Sunny'),
-            ('Sydney', '2024-01-18', 31.0, 52.0, 9.0, 'Sunny'),
-            ('Sydney', '2024-01-19', 27.0, 62.0, 13.0, 'Partly Cloudy'),
-            ('Sydney', '2024-01-20', 29.5, 55.0, 11.5, 'Clear')
+            ('Madurai', '2024-01-15', 22.5, 65.0, 15.2, 'Sunny'),
+            ('Chennai', '2024-01-16', 20.0, 70.0, 18.5, 'Cloudy'),
+            ('Nellore', '2024-01-17', 18.5, 75.0, 20.0, 'Rainy'),
+            ('Kanchipuram', '2024-01-18', 21.0, 68.0, 16.0, 'Partly Cloudy'),
+            ('Tamil Nadu', '2024-01-19', 23.0, 62.0, 14.0, 'Sunny'),
+            ('Bhopal', '2024-01-20', 19.5, 72.0, 19.0, 'Cloudy'),
+            ('Anantapur', '2024-01-15', 18.0, 75.0, 20.5, 'Cloudy'),
+            ('Mumbai', '2024-01-16', 16.5, 80.0, 22.0, 'Rainy'),
+            ('Hyderabad', '2024-01-17', 19.0, 70.0, 18.0, 'Partly Cloudy'),
+            ('Trichy', '2024-01-18', 17.0, 78.0, 21.0, 'Cloudy'),
+            ('Panta', '2024-01-19', 20.0, 68.0, 17.5, 'Sunny'),
+            ('Kochin', '2024-01-20', 18.5, 72.0, 19.5, 'Partly Cloudy'),
+            ('Madurai', '2024-01-15', 25.0, 60.0, 12.0, 'Clear'),
+            ('Trichy', '2024-01-16', 23.5, 65.0, 14.0, 'Sunny'),
+            ('Hyderabad', '2024-01-17', 24.0, 62.0, 11.5, 'Clear'),
+            ('Madurai', '2024-01-18', 26.0, 58.0, 10.0, 'Sunny'),
+            ('Chennai', '2024-01-19', 22.0, 68.0, 13.5, 'Cloudy'),
+            ('Nellore', '2024-01-20', 24.5, 60.0, 12.5, 'Clear'),
+            ('Kanchipuram', '2024-01-15', 20.0, 70.0, 18.0, 'Partly Cloudy'),
+            ('Tamil Nadu', '2024-01-16', 19.0, 72.0, 19.5, 'Cloudy'),
+            ('Bhopal', '2024-01-17', 21.0, 68.0, 17.0, 'Sunny'),
+            ('Anantapur', '2024-01-18', 18.0, 75.0, 20.0, 'Rainy'),
+            ('Mumbai', '2024-01-19', 22.0, 65.0, 16.5, 'Sunny'),
+            ('Hyderabad', '2024-01-20', 20.5, 68.0, 18.5, 'Partly Cloudy'),
+            ('Trichy', '2024-01-15', 30.0, 55.0, 10.0, 'Sunny'),
+            ('Chennai', '2024-01-16', 28.5, 58.0, 12.0, 'Clear'),
+            ('Mumbai', '2024-01-17', 29.0, 56.0, 11.0, 'Sunny'),
+            ('Patna', '2024-01-18', 31.0, 52.0, 9.0, 'Sunny'),
+            ('Tamil Nadu', '2024-01-19', 27.0, 62.0, 13.0, 'Partly Cloudy'),
+            ('Kerala', '2024-01-20', 29.5, 55.0, 11.5, 'Clear')
         ]
         
         cursor.executemany('''
@@ -357,13 +359,18 @@ def visualization_page(cities):
                           color_continuous_scale="Viridis")
         st.plotly_chart(fig3, use_container_width=True)
         
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4, col5 = st.columns(5)
         with col1:
             st.metric("Average Wind Speed", f"{df['Wind_Speed_kmh'].mean():.1f} km/h")
         with col2:
             st.metric("Max Wind Speed", f"{df['Wind_Speed_kmh'].max():.1f} km/h")
         with col3:
             st.metric("Min Wind Speed", f"{df['Wind_Speed_kmh'].min():.1f} km/h")
+        with col4:
+            st.metric("Wind Speed Std Dev", f"{df['Wind_Speed_kmh'].std():.1f} km/h")
+        with col5:
+            st.metric("Records Count", f"{len(df)}")
+                
     
     with tab4:
         st.subheader("Weather Conditions Distribution")
