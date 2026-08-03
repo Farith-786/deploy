@@ -18,6 +18,8 @@ import calendar
 import openpyxl
 import yfinance
 import requests
+import plotly.express as px
+import plotly.graph_objects as go
 
 # ==================== USER AUTHENTICATION SYSTEM ====================
 
