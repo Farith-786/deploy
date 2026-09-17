@@ -38,8 +38,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------- HEADER ----------
-st.title("💘 Find Your Perfect Match")
-st.write("Answer a few questions so I can find your perfect girl 💕")
+st.title("💘 Find Your Perfect Match friendship")
+st.write("Answer a few questions so I can find your perfect girl & Boy Friendship Bond 💕")
 
 # ---------- FORM ----------
 with st.form("dating_form"):
@@ -49,7 +49,7 @@ with st.form("dating_form"):
         "Your Interests 💫",
         ["Music", "Travel", "Books", "Gaming", "Fitness", "Coding", "Movies", "Cooking", "Art"]
     )
-    vibe = st.radio("Your vibe?", ["Funny 😄", "Romantic 🌹", "Adventurous 🌍", "Intellectual 🧠"])
+    vibe = st.radio("Your vibe?", ["Funny 😄", "Romantic 🌹", "Adventurous 🌍", "Intellectual 🧠", Overthinker,])
     message = st.text_area("A message to your future girl 💌")
 
     submitted = st.form_submit_button("Find My Match 💘")
@@ -129,3 +129,81 @@ with st.expander("🔒 Owner Panel – View All Matches (for you)"):
             )
     elif password:
         st.error("Wrong password ❌")
+
+# --------------------- CREATOR INFO PAGE ---------------------
+elif page == "👩‍💻 Creator Info":
+    st.markdown('<div class="main-header">👩‍💻 About the Creator</div>', unsafe_allow_html=True)
+    
+    col1, col2 = st.columns([1, 2])
+    
+    with col1:
+        st.image("https://via.placeholder.com/200x200/667eea/ffffff?text=Developer", use_container_width=True)
+    
+    with col2:
+        st.markdown("""
+        ### **Farith Ahamed**
+        
+        **Role:** Software Developer
+        
+        **Skills:**
+        - 🐍 Python
+        - 📊 Data Analysis & Visualization
+        - 🗄️ SQL / MySQL
+        - 🎨 Streamlit
+        - 📈 Pandas & NumPy
+        - 📉 Matplotlib & Seaborn
+        
+        **Contact:**
+        - 📧 Email: farithahamed736@gmail.com
+        - 🔗 LinkedIn: linkedin.com/in/farith
+        - 🐙 GitHub: github.com/farith
+        """)
+    
+    st.markdown("---")
+    st.markdown("### 🛠️ Technologies Used in This Project")
+    
+    tech_cols = st.columns(4)
+    with tech_cols[0]:
+        st.markdown("""
+        **Frontend**
+        - Streamlit
+        - HTML/CSS
+        """)
+    with tech_cols[1]:
+        st.markdown("""
+        **Backend**
+        - Python
+        - MySQL
+        """)
+    with tech_cols[2]:
+        st.markdown("""
+        **Data Processing**
+        - Pandas
+        - NumPy
+        """)
+    with tech_cols[3]:
+        st.markdown("""
+        **Visualization**
+        - Matplotlib
+        - Seaborn
+        """)
+    
+    st.markdown("---")
+    st.markdown("""
+    ### 📝 Project Details
+    - **Database:** MySQL (Matching_2026)
+    - **Tables:** Matching_data
+    - **Total Records:** Dynamic
+    - **Last Updated:** 2026
+    """)
+
+# Footer
+st.markdown("---")
+st.markdown(
+    """
+    <div style="text-align: center; color: #666; padding: 20px;">
+        <p>© 2026 Growth Population Analysis thanks for using | Built with ❤️ using Streamlit</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
