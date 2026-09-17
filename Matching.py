@@ -38,8 +38,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------- HEADER ----------
-st.title("💘 Find Your Perfect Match friendship")
-st.write("Answer a few questions so I can find your perfect girl & Boy Friendship Bond 💕")
+page = st.sidebar.radio("Navigate", ["💘 Find Your Match", "👩‍💻 Creator Info"])
+
+st.title("💘 Find Your Perfect Match")
+st.write("Answer a few questions so I can find your perfect girl 💕")
 
 # ---------- FORM ----------
 with st.form("dating_form"):
@@ -49,7 +51,7 @@ with st.form("dating_form"):
         "Your Interests 💫",
         ["Music", "Travel", "Books", "Gaming", "Fitness", "Coding", "Movies", "Cooking", "Art"]
     )
-    vibe = st.radio("Your vibe?", ["Funny 😄", "Romantic 🌹", "Adventurous 🌍", "Intellectual 🧠", Overthinker,])
+    vibe = st.radio("Your vibe?", ["Funny 😄", "Romantic 🌹", "Adventurous 🌍", "Intellectual 🧠"])
     message = st.text_area("A message to your future girl 💌")
 
     submitted = st.form_submit_button("Find My Match 💘")
@@ -83,7 +85,9 @@ if submitted:
             "vibe": vibe,
             "message": message,
             "match": match_name,
-            "score": score
+            "score": score,
+            "description": match_desc,
+            
         }
         save_match(entry)
 
@@ -129,9 +133,9 @@ with st.expander("🔒 Owner Panel – View All Matches (for you)"):
             )
     elif password:
         st.error("Wrong password ❌")
-
+        
 # --------------------- CREATOR INFO PAGE ---------------------
-elif page == "👩‍💻 Creator Info":
+if page == "👩‍💻 Creator Info":
     st.markdown('<div class="main-header">👩‍💻 About the Creator</div>', unsafe_allow_html=True)
     
     col1, col2 = st.columns([1, 2])
