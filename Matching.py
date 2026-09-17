@@ -151,7 +151,7 @@ if page == "👩‍💻 Creator Info":
         
         **Skills:**
         - 🐍 Python
-        - 📊 Data Analysis & Visualization
+        - 📊 Java Script
         - 🗄️ SQL / MySQL
         - 🎨 Streamlit
         - 📈 Pandas & NumPy
