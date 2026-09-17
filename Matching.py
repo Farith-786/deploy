@@ -52,7 +52,7 @@ with st.form("dating_form"):
         ["Music", "Travel", "Books", "Gaming", "Fitness", "Coding", "Movies", "Cooking", "Art"]
     )
     vibe = st.radio("Your vibe?", ["Funny 😄", "Romantic 🌹", "Adventurous 🌍", "Intellectual 🧠"])
-    message = st.text_area("A message to your future girl 💌")
+    message = st.text_area("Enna pathi ungaluku Therinjadha Solunga Honest ha erundhalum i Agree 💌")
 
     submitted = st.form_submit_button("Find My Match 💘")
 
