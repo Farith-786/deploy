@@ -40,8 +40,8 @@ st.markdown("""
 # ---------- HEADER ----------
 page = st.sidebar.radio("Navigate", ["💘 Find Your Match", "👩‍💻 Creator Info"])
 
-st.title("💘 Find Your Perfect Match")
-st.write("Answer a few questions so I can find your perfect girl 💕")
+st.title("💘 Find Your Perfect Match Friendship Bond")
+st.write("Answer a few questions so I can find your perfect Boy & Girl Friendship Bond 💕")
 
 # ---------- FORM ----------
 with st.form("dating_form"):
